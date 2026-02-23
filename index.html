@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Hotel Shree Krishna</title>
+    <title>Hotel Shree Krishna - Dining & Lodging</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap"
         rel="stylesheet">
@@ -38,30 +38,18 @@
             margin: 2px;
         }
 
+        .tabs-container {
+            text-align: center;
+        }
 
+        .tab-row {
+            margin-bottom: 10px;
+        }
 
+        .tab {
+            margin: 4px;
+        }
 
-
-        
-
-.tabs-container {
-  text-align: center;
-}
-
-.tab-row {
-  margin-bottom: 10px;
-}
-
-.tab {
-  margin: 4px;
-}
-
-
-
-
-
-        
-        
         .tab.active {
             background: linear-gradient(90deg, var(--gold1), var(--gold2));
             color: #0b0b0d;
@@ -118,17 +106,6 @@
                 gap: 5px;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
 
         :root {
             --bg: #0b0b0d;
@@ -901,7 +878,7 @@
             font-size: 16px;
         }
 
-        /* Delivery Options in Cart */
+        /* Delivery/Lodging Options in Cart */
         .delivery-options {
             margin: 20px 0;
             padding: 20px;
@@ -962,7 +939,7 @@
             height: 18px;
         }
 
-        /* Delivery Forms */
+        /* Delivery/Lodging Forms */
         .delivery-form {
             display: none;
             animation: fadeIn 0.5s ease;
@@ -1015,6 +992,72 @@
 
         .form-input::placeholder {
             color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Room Type Selector */
+        .room-type-selector {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .room-option {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .room-option:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--gold1);
+        }
+
+        .room-option.selected {
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0.15), rgba(255, 204, 102, 0.15));
+            border: 2px solid var(--gold1);
+        }
+
+        .room-name {
+            font-weight: 700;
+            color: var(--gold2);
+            margin-bottom: 4px;
+        }
+
+        .room-price {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .date-range {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .guest-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .guest-input .form-input {
+            flex: 1;
+        }
+
+        .guest-input .btn-small {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
         }
 
         /* Customer Details Summary */
@@ -1145,7 +1188,7 @@
         <div class="cafe-header">
 <img src="logo.png" alt="Logo" style="width:400px; height:auto; display:block; margin:0 auto;">
             <div class="cafe-name">Hotel Shree Krishna</div>
-            <div class="cafe-subtitle">The Brew That Gets You Through.</div>
+            <div class="cafe-subtitle">The Brew That Gets You Through. Stay & Dine with Us</div>
             <div class="location-info">
                 <div class="location-text"></div>
                 <div class="address"></div>
@@ -1155,10 +1198,6 @@
                 <div class="veg">
                     <span class="symbol"></span>
                     <span>VEG</span>
-                </div>
-                <div class="nonveg">
-                    <span class="symbol"></span>
-                    <span>NON VEG</span>
                 </div>
             </div>
         </div>
@@ -1253,18 +1292,17 @@
     <div class="cart-modal" id="cartModal">
         <div class="cart-content">
             <div class="cart-header">
-                <h3 class="cart-title">Your Order</h3>
+                <h3 class="cart-title">Your Order & Stay</h3>
                 <button class="close-cart" id="closeCart">&times;</button>
             </div>
 
-            <!-- Delivery Options -->
+            <!-- Delivery/Lodging Options -->
             <div class="delivery-options">
                 <h4 class="options-title">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path
-                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        <path d="M3 12l2-2 2 2 2-2 2 2 2-2 2 2 2-2 2 2M5 21v-7M19 21v-7M5 12h14" />
                     </svg>
-                    Select Delivery Type
+                    Select Service Type
                 </h4>
 
                 <div class="delivery-option-buttons">
@@ -1275,18 +1313,18 @@
                                 d="M9 12v12M15 12v12M5 12l-2 9h18l-2-9M5 12V8c0-1.105.895-2 2-2h10c1.105 0 2 .895 2 2v4" />
                             <circle cx="12" cy="6" r="2" />
                         </svg>
-                        Restaurant
+                        Dine-In
                     </button>
-                    <button class="option-btn" id="homeDeliveryOption" onclick="selectDeliveryOption('home')">
+                    <button class="option-btn" id="lodgingOption" onclick="selectDeliveryOption('lodging')">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path
-                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            <path d="M3 10h18M3 14h18M5 18h14M8 6h8M4 10v4a2 2 0 002 2h12a2 2 0 002-2v-4" />
+                            <rect x="2" y="3" width="20" height="16" rx="2" />
                         </svg>
-                        Home Delivery
+                        Lodging / Stay
                     </button>
                 </div>
 
-                <!-- Restaurant Form -->
+                <!-- Restaurant/Dine-In Form -->
                 <div class="delivery-form active" id="restaurantForm">
                     <div class="form-group">
                         <label class="form-label" for="tableNumber">Table Number</label>
@@ -1295,20 +1333,66 @@
                     </div>
                 </div>
 
-                <!-- Home Delivery Form -->
-                <div class="delivery-form" id="homeDeliveryForm">
+                <!-- Lodging Form (Replaced Home Delivery) -->
+                <div class="delivery-form" id="lodgingForm">
                     <div class="form-group">
-                        <label class="form-label" for="customerName">Full Name</label>
-                        <input type="text" id="customerName" class="form-input" placeholder="Enter your full name" />
+                        <label class="form-label" for="guestName">Guest Full Name</label>
+                        <input type="text" id="guestName" class="form-input" placeholder="Enter your full name" />
                     </div>
+                    
                     <div class="form-group">
-                        <label class="form-label" for="customerMobile">Mobile Number</label>
-                        <input type="tel" id="customerMobile" class="form-input"
-                            placeholder="Enter your mobile number" />
+                        <label class="form-label" for="guestMobile">Mobile Number</label>
+                        <input type="tel" id="guestMobile" class="form-input" placeholder="Enter your mobile number" />
                     </div>
+                    
                     <div class="form-group">
-                        <label class="form-label" for="customerAddress">Delivery Address</label>
-                        <textarea id="customerAddress" class="form-input" placeholder="Enter your complete address"
+                        <label class="form-label" for="guestEmail">Email Address (Optional)</label>
+                        <input type="email" id="guestEmail" class="form-input" placeholder="Enter your email" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Room Type</label>
+                        <div class="room-type-selector" id="roomTypeSelector">
+                            <div class="room-option selected" data-room="standard" data-price="1500" onclick="selectRoomType('standard')">
+                                <div class="room-name">Standard Room</div>
+                                <div class="room-price">₹1,500 / night</div>
+                            </div>
+                            <div class="room-option" data-room="deluxe" data-price="2500" onclick="selectRoomType('deluxe')">
+                                <div class="room-name">Deluxe Room</div>
+                                <div class="room-price">₹2,500 / night</div>
+                            </div>
+                            <div class="room-option" data-room="family" data-price="3500" onclick="selectRoomType('family')">
+                                <div class="room-name">Family Suite</div>
+                                <div class="room-price">₹3,500 / night</div>
+                            </div>
+                            <div class="room-option" data-room="premium" data-price="4500" onclick="selectRoomType('premium')">
+                                <div class="room-name">Premium Suite</div>
+                                <div class="room-price">₹4,500 / night</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Check-in & Check-out Dates</label>
+                        <div class="date-range">
+                            <input type="date" id="checkInDate" class="form-input" />
+                            <input type="date" id="checkOutDate" class="form-input" />
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Number of Guests</label>
+                        <div class="guest-input">
+                            <input type="number" id="guestCount" class="form-input" value="2" min="1" max="6" />
+                            <button class="btn-small" onclick="adjustGuests(-1)">-</button>
+                            <button class="btn-small" onclick="adjustGuests(1)">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Special Requests</label>
+                        <textarea id="specialRequests" class="form-input" 
+                            placeholder="Any special requirements (extra bed, room preferences, etc.)"
                             rows="3"></textarea>
                     </div>
                 </div>
@@ -1342,7 +1426,7 @@
                         <path
                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.864 3.488" />
                     </svg>
-                    Order via WhatsApp
+                    Send Booking Request
                 </button>
             </div>
         </div>
@@ -1629,13 +1713,17 @@
        ];
 
 
-
-  
-         
-        
         // Cart functionality
         let cart = [];
-        let deliveryType = 'restaurant'; // Default to restaurant
+        let deliveryType = 'restaurant'; // Default to dine-in
+        let selectedRoom = 'standard'; // Default room type
+        let roomPrices = {
+            'standard': 1500,
+            'deluxe': 2500,
+            'family': 3500,
+            'premium': 4500
+        };
+        
         const cartButton = document.getElementById('cartButton');
         const cartModal = document.getElementById('cartModal');
         const closeCart = document.getElementById('closeCart');
@@ -1648,17 +1736,43 @@
         const addAnotherItem = document.getElementById('addAnotherItem');
         const customerDetailsSummary = document.getElementById('customerDetailsSummary');
 
+        // Select room type function
+        function selectRoomType(roomType) {
+            selectedRoom = roomType;
+            
+            // Update UI
+            document.querySelectorAll('.room-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            document.querySelector(`.room-option[data-room="${roomType}"]`).classList.add('selected');
+            
+            // Update summary if needed
+            updateCustomerDetailsSummary();
+        }
+
+        // Adjust guests function
+        function adjustGuests(change) {
+            const guestInput = document.getElementById('guestCount');
+            let value = parseInt(guestInput.value) || 1;
+            value += change;
+            if (value < 1) value = 1;
+            if (value > 10) value = 10;
+            guestInput.value = value;
+            updateCustomerDetailsSummary();
+        }
+
         // Delivery option selection
         function selectDeliveryOption(type) {
             deliveryType = type;
 
             // Update button states
             document.getElementById('restaurantOption').classList.toggle('active', type === 'restaurant');
-            document.getElementById('homeDeliveryOption').classList.toggle('active', type === 'home');
+            document.getElementById('lodgingOption').classList.toggle('active', type === 'lodging');
 
             // Show/hide forms
             document.getElementById('restaurantForm').classList.toggle('active', type === 'restaurant');
-            document.getElementById('homeDeliveryForm').classList.toggle('active', type === 'home');
+            document.getElementById('lodgingForm').classList.toggle('active', type === 'lodging');
 
             // Update details summary
             updateCustomerDetailsSummary();
@@ -1680,33 +1794,48 @@
                 <path d="M9 12v12M15 12v12M5 12l-2 9h18l-2-9M5 12V8c0-1.105.895-2 2-2h10c1.105 0 2 .895 2 2v4"/>
                 <circle cx="12" cy="6" r="2"/>
               </svg>
-              Restaurant Order
+              Dine-In Order
             </div>
             <div class="summary-details">
-              <div><strong>Type:</strong> Dine-in</div>
+              <div><strong>Type:</strong> Restaurant</div>
               <div><strong>Table Number:</strong> ${tableNumber}</div>
             </div>
           `;
                 }
             } else {
-                const name = document.getElementById('customerName').value.trim();
-                const mobile = document.getElementById('customerMobile').value.trim();
-                const address = document.getElementById('customerAddress').value.trim();
+                const name = document.getElementById('guestName').value.trim();
+                const mobile = document.getElementById('guestMobile').value.trim();
+                const email = document.getElementById('guestEmail').value.trim();
+                const checkIn = document.getElementById('checkInDate').value;
+                const checkOut = document.getElementById('checkOutDate').value;
+                const guests = document.getElementById('guestCount').value;
+                const special = document.getElementById('specialRequests').value.trim();
 
-                if (name || mobile || address) {
+                if (name && mobile && checkIn && checkOut) {
                     showSummary = true;
+                    
+                    // Calculate nights
+                    const nights = calculateNights(checkIn, checkOut);
+                    
                     summaryHTML = `
             <div class="summary-title">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                <path d="M3 10h18M3 14h18M5 18h14M8 6h8M4 10v4a2 2 0 002 2h12a2 2 0 002-2v-4" />
+                <rect x="2" y="3" width="20" height="16" rx="2" />
               </svg>
-              Delivery Order
+              Lodging Booking
             </div>
             <div class="summary-details">
-              <div><strong>Type:</strong> Home Delivery</div>
-              ${name ? `<div><strong>Name:</strong> ${name}</div>` : ''}
-              ${mobile ? `<div><strong>Mobile:</strong> ${mobile}</div>` : ''}
-              ${address ? `<div><strong>Address:</strong> ${address}</div>` : ''}
+              <div><strong>Type:</strong> Hotel Stay</div>
+              <div><strong>Guest:</strong> ${name}</div>
+              <div><strong>Mobile:</strong> ${mobile}</div>
+              ${email ? `<div><strong>Email:</strong> ${email}</div>` : ''}
+              <div><strong>Room:</strong> ${capitalizeFirst(selectedRoom)} (₹${roomPrices[selectedRoom]}/night)</div>
+              <div><strong>Check-in:</strong> ${formatDate(checkIn)}</div>
+              <div><strong>Check-out:</strong> ${formatDate(checkOut)}</div>
+              <div><strong>Guests:</strong> ${guests}</div>
+              <div><strong>Nights:</strong> ${nights}</div>
+              ${special ? `<div><strong>Special:</strong> ${special}</div>` : ''}
             </div>
           `;
                 }
@@ -1718,6 +1847,36 @@
             } else {
                 customerDetailsSummary.classList.remove('active');
             }
+        }
+
+        // Helper function to format date
+        function formatDate(dateString) {
+            if (!dateString) return 'Not set';
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+        }
+
+        // Helper function to capitalize first letter
+        function capitalizeFirst(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        // Calculate nights between two dates
+        function calculateNights(checkIn, checkOut) {
+            if (!checkIn || !checkOut) return 0;
+            const start = new Date(checkIn);
+            const end = new Date(checkOut);
+            const diffTime = Math.abs(end - start);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            return diffDays;
+        }
+
+        // Calculate lodging cost
+        function calculateLodgingCost() {
+            const checkIn = document.getElementById('checkInDate').value;
+            const checkOut = document.getElementById('checkOutDate').value;
+            const nights = calculateNights(checkIn, checkOut);
+            return nights * roomPrices[selectedRoom];
         }
 
         // Toggle cart modal
@@ -1794,6 +1953,7 @@
             if (cart.length === 0) {
                 cartEmpty.style.display = 'block';
                 cartItems.innerHTML = '';
+                cartTotal.textContent = '₹0';
             } else {
                 cartEmpty.style.display = 'none';
 
@@ -1801,7 +1961,7 @@
                 let totalAmount = 0;
 
                 cart.forEach(item => {
-                    const price = parseInt(item.price.replace('₹', ''));
+                    const price = parseInt(item.price.replace('₹', '')) || 0;
                     const itemTotal = price * item.quantity;
                     totalAmount += itemTotal;
 
@@ -1809,7 +1969,7 @@
             <div class="cart-item">
               <div class="item-info">
                 <div class="item-name">${item.name}</div>
-                <div class="item-price">${item.price}</div>
+                <div class="item-price">₹${price}</div>
               </div>
               <div class="item-quantity">
                 <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
@@ -1822,7 +1982,15 @@
                 });
 
                 cartItems.innerHTML = itemsHTML;
-                cartTotal.textContent = `₹${totalAmount}`;
+                
+                // Add lodging cost if applicable
+                let displayTotal = totalAmount;
+                if (deliveryType === 'lodging') {
+                    const lodgingCost = calculateLodgingCost();
+                    displayTotal += lodgingCost;
+                }
+                
+                cartTotal.textContent = `₹${displayTotal}`;
             }
         }
 
@@ -1850,12 +2018,6 @@
 
         // WhatsApp order function with customer details
         whatsappOrder.addEventListener('click', () => {
-            if (cart.length === 0) {
-                alert('Your cart is empty!');
-                return;
-            }
-
-            // Validate details based on delivery type
             let validationPassed = true;
             let validationMessage = '';
 
@@ -1867,13 +2029,23 @@
                     validationMessage = 'Please enter your table number';
                 }
             } else {
-                const customerName = document.getElementById('customerName').value.trim();
-                const customerMobile = document.getElementById('customerMobile').value.trim();
-                const customerAddress = document.getElementById('customerAddress').value.trim();
+                const guestName = document.getElementById('guestName').value.trim();
+                const guestMobile = document.getElementById('guestMobile').value.trim();
+                const checkIn = document.getElementById('checkInDate').value;
+                const checkOut = document.getElementById('checkOutDate').value;
 
-                if (!customerName || !customerMobile || !customerAddress) {
+                if (!guestName) {
                     validationPassed = false;
-                    validationMessage = 'Please fill in all delivery details (Name, Mobile, Address)';
+                    validationMessage = 'Please enter guest name';
+                } else if (!guestMobile) {
+                    validationPassed = false;
+                    validationMessage = 'Please enter mobile number';
+                } else if (!checkIn) {
+                    validationPassed = false;
+                    validationMessage = 'Please select check-in date';
+                } else if (!checkOut) {
+                    validationPassed = false;
+                    validationMessage = 'Please select check-out date';
                 }
             }
 
@@ -1882,38 +2054,59 @@
                 return;
             }
 
-            let message = `Hello! I would like to place an order:\n\n`;
+            let message = `🏨 *Hotel Shree Krishna - Booking Request*\n\n`;
 
             // Add delivery details
             if (deliveryType === 'restaurant') {
                 const tableNumber = document.getElementById('tableNumber').value.trim();
 
-                message += `**Delivery Type:** Dine-in\n`;
-                message += `**Table Number:** ${tableNumber}\n\n`;
+                message += `*Service Type:* Dine-In\n`;
+                message += `*Table Number:* ${tableNumber}\n\n`;
             } else {
-                const customerName = document.getElementById('customerName').value.trim();
-                const customerMobile = document.getElementById('customerMobile').value.trim();
-                const customerAddress = document.getElementById('customerAddress').value.trim();
+                const guestName = document.getElementById('guestName').value.trim();
+                const guestMobile = document.getElementById('guestMobile').value.trim();
+                const guestEmail = document.getElementById('guestEmail').value.trim();
+                const checkIn = document.getElementById('checkInDate').value;
+                const checkOut = document.getElementById('checkOutDate').value;
+                const guests = document.getElementById('guestCount').value;
+                const special = document.getElementById('specialRequests').value.trim();
+                const nights = calculateNights(checkIn, checkOut);
 
-                message += `**Delivery Type:** Home Delivery\n`;
-                message += `**Name:** ${customerName}\n`;
-                message += `**Mobile:** ${customerMobile}\n`;
-                message += `**Address:** ${customerAddress}\n\n`;
+                message += `*Service Type:* Lodging / Stay\n`;
+                message += `*Guest Name:* ${guestName}\n`;
+                message += `*Mobile:* ${guestMobile}\n`;
+                if (guestEmail) message += `*Email:* ${guestEmail}\n`;
+                message += `*Room Type:* ${capitalizeFirst(selectedRoom)} (₹${roomPrices[selectedRoom]}/night)\n`;
+                message += `*Check-in:* ${formatDate(checkIn)}\n`;
+                message += `*Check-out:* ${formatDate(checkOut)}\n`;
+                message += `*Nights:* ${nights}\n`;
+                message += `*Guests:* ${guests}\n`;
+                if (special) message += `*Special Requests:* ${special}\n`;
+                message += `\n`;
             }
 
-            message += `**Order Details:**\n`;
+            // Add food order if any
+            if (cart.length > 0) {
+                message += `*Food Order:*\n`;
+                cart.forEach(item => {
+                    const price = parseInt(item.price.replace('₹', '')) || 0;
+                    message += `• ${item.name} - ${item.quantity} x ₹${price}\n`;
+                });
+            }
 
-            cart.forEach(item => {
-                message += `• ${item.name} - ${item.quantity} x ${item.price}\n`;
-            });
-
-            const totalAmount = cart.reduce((sum, item) => {
-                const price = parseInt(item.price.replace('₹', ''));
+            // Calculate total
+            let totalAmount = cart.reduce((sum, item) => {
+                const price = parseInt(item.price.replace('₹', '')) || 0;
                 return sum + (price * item.quantity);
             }, 0);
 
-            message += `\n**Total Amount:** ₹${totalAmount}\n\n`;
-            message += `Thank you!`;
+            if (deliveryType === 'lodging') {
+                const lodgingCost = calculateLodgingCost();
+                totalAmount += lodgingCost;
+            }
+
+            message += `\n*Total Amount:* ₹${totalAmount}\n\n`;
+            message += `Thank you! We'll confirm your booking shortly.`;
 
             // Encode the message for WhatsApp URL
             const encodedMessage = encodeURIComponent(message);
@@ -1953,7 +2146,7 @@
           </div>
           <div class="card-footer">
             <div class="price">${item.price}</div>
-            <button class="btn-primary" onclick="addToCart(${JSON.stringify(item).replace(/"/g, '&quot;')}, this)">Add to Cart</button>
+            <button class="btn-primary" onclick='addToCart(${JSON.stringify(item).replace(/'/g, "\\'")}, this)'>Add to Cart</button>
           </div>
         </div>
       `).join('');
@@ -1979,10 +2172,30 @@
             renderMenuItems(filteredItems);
         }
 
+        // Set default dates
+        function setDefaultDates() {
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            
+            const formatDateInput = (date) => {
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const day = String(date.getDate()).padStart(2, '0');
+                return `${year}-${month}-${day}`;
+            };
+            
+            document.getElementById('checkInDate').value = formatDateInput(today);
+            document.getElementById('checkOutDate').value = formatDateInput(tomorrow);
+        }
+
         // Initialize the page
         document.addEventListener('DOMContentLoaded', () => {
             // Set default delivery option
             selectDeliveryOption('restaurant');
+            
+            // Set default dates
+            setDefaultDates();
 
             // Render menu items
             renderMenuItems(data);
@@ -2003,9 +2216,13 @@
 
             // Update details summary when form inputs change
             document.getElementById('tableNumber').addEventListener('input', updateCustomerDetailsSummary);
-            document.getElementById('customerName').addEventListener('input', updateCustomerDetailsSummary);
-            document.getElementById('customerMobile').addEventListener('input', updateCustomerDetailsSummary);
-            document.getElementById('customerAddress').addEventListener('input', updateCustomerDetailsSummary);
+            document.getElementById('guestName').addEventListener('input', updateCustomerDetailsSummary);
+            document.getElementById('guestMobile').addEventListener('input', updateCustomerDetailsSummary);
+            document.getElementById('guestEmail').addEventListener('input', updateCustomerDetailsSummary);
+            document.getElementById('checkInDate').addEventListener('change', updateCustomerDetailsSummary);
+            document.getElementById('checkOutDate').addEventListener('change', updateCustomerDetailsSummary);
+            document.getElementById('guestCount').addEventListener('input', updateCustomerDetailsSummary);
+            document.getElementById('specialRequests').addEventListener('input', updateCustomerDetailsSummary);
         });
 
         // Make functions available globally
@@ -2013,6 +2230,8 @@
         window.removeFromCart = removeFromCart;
         window.updateQuantity = updateQuantity;
         window.selectDeliveryOption = selectDeliveryOption;
+        window.selectRoomType = selectRoomType;
+        window.adjustGuests = adjustGuests;
     </script>
 </body>
 
